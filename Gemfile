@@ -7,6 +7,8 @@ source 'http://rubygems.org'
 
 gem 'pg'
 
+gem 'tlsmail'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
