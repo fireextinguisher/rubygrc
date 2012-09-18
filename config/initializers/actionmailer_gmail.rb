@@ -8,5 +8,5 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
   :authentication  => :plain
 }
-git
+
 ActionMailer::Base.raise_delivery_errors = true
