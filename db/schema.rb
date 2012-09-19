@@ -10,7 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914231513) do
+ActiveRecord::Schema.define(:version => 20120919200749) do
+
+  create_table "controls", :force => true do |t|
+    t.string   "name"
+    t.string   "who"
+    t.string   "as"
+    t.string   "what"
+    t.string   "how"
+    t.string   "exception"
+    t.string   "evidence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "owner_id"
+  end
+
+  add_index "controls", ["owner_id"], :name => "index_controls_on_owner_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

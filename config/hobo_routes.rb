@@ -5,6 +5,16 @@
 RubyGRC::Application.routes.draw do
 
 
+  # Resource routes for controller "controls"
+  get 'controls(.:format)' => 'controls#index', :as => 'controls'
+  get 'controls/new(.:format)', :as => 'new_control'
+  get 'controls/:id/edit(.:format)' => 'controls#edit', :as => 'edit_control'
+  get 'controls/:id(.:format)' => 'controls#show', :as => 'control', :constraints => { :id => %r([^/.?]+) }
+  post 'controls(.:format)' => 'controls#create', :as => 'create_control'
+  put 'controls/:id(.:format)' => 'controls#update', :as => 'update_control', :constraints => { :id => %r([^/.?]+) }
+  delete 'controls/:id(.:format)' => 'controls#destroy', :as => 'destroy_control', :constraints => { :id => %r([^/.?]+) }
+
+
   # Lifecycle routes for controller "users"
   post 'users/signup(.:format)' => 'users#do_signup', :as => 'do_user_signup'
   get 'users/signup(.:format)' => 'users#signup', :as => 'user_signup'

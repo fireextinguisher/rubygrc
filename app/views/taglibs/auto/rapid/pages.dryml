@@ -5,8 +5,131 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Control"><ht key="control.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Control Pages ====== -->
+
+<def tag="index-page" for="Control">
+  <page merge title="#{ht 'control.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page control" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="control.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="control.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="control.actions.new">New Control</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Control">
+  <page merge title="#{ht 'control.new.title', :default=>[' New Control'] }">
+    <body: class="new-page control" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="control.new.heading">
+            New Control
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'control.actions.create', :default=>['Create Control']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Control">
+  <page merge title="#{ht 'control.show.title', :default=>['Control'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page control" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="control.show.heading" name="#{name(:no_wrapper => true)}">
+                Control <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a:owner param="creator-link"/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="control.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Control
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="who, as, what, how, exception, evidence" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Control">
+  <page merge title="#{ht 'control.edit.title', :default=>['Edit Control'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page control" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="control.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Control
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'control.actions.delete', :default=>['Remove This Control']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
