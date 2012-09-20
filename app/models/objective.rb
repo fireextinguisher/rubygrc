@@ -1,19 +1,20 @@
-class Control < ActiveRecord::Base
+class Objective < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    name      :string
-    who       :string
-    as        :string
-    do_what   :string
-    how       :string
-    exception :string
-    evidence  :string
+    what      :string
+    is        :string
     timestamps
   end
-
+  
   belongs_to :owner, :class_name => "User", :creator => true
+  belongs_to :assertion, :class_name => "Assertion"
+  
+  def name
+    return "" + what + " " + is
+  end
+
 
   # --- Permissions --- #
 

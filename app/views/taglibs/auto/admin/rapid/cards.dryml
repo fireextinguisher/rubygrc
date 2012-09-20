@@ -1,7 +1,29 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
+<def tag="card" for="Assertion">
+  <card class="assertion" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <view:description param="description"/>
+    </body:>
+  </card>
+</def>
+
 <def tag="card" for="Control">
   <card class="control" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <a:owner param="creator-link"/>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="Objective">
+  <card class="objective" param="default" merge>
     <header: param>
       <h4 param="heading"><name/></h4>
     </header:>

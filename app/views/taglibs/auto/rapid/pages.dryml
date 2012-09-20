@@ -5,9 +5,131 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Assertion"><ht key="assertion.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Control"><ht key="control.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Objective"><ht key="objective.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Assertion Pages ====== -->
+
+<def tag="index-page" for="Assertion">
+  <page merge title="#{ht 'assertion.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page assertion" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="assertion.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="assertion.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="assertion.actions.new">New Assertion</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Assertion">
+  <page merge title="#{ht 'assertion.new.title', :default=>[' New Assertion'] }">
+    <body: class="new-page assertion" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="assertion.new.heading">
+            New Assertion
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'assertion.actions.create', :default=>['Create Assertion']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Assertion">
+  <page merge title="#{ht 'assertion.show.title', :default=>['Assertion'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page assertion" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="assertion.show.heading" name="#{name(:no_wrapper => true)}">
+                Assertion <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="assertion.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Assertion
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description" />
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Assertion">
+  <page merge title="#{ht 'assertion.edit.title', :default=>['Edit Assertion'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page assertion" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="assertion.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Assertion
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'assertion.actions.delete', :default=>['Remove This Assertion']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
@@ -99,7 +221,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="who, as, what, how, exception, evidence" param/>
+            <field-list fields="who, as, do_what, how, exception, evidence" param/>
           </section>
     </content:>
 
@@ -120,6 +242,128 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'control.actions.delete', :default=>['Remove This Control']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Objective Pages ====== -->
+
+<def tag="index-page" for="Objective">
+  <page merge title="#{ht 'objective.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page objective" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="objective.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="objective.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="objective.actions.new">New Objective</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Objective">
+  <page merge title="#{ht 'objective.new.title', :default=>[' New Objective'] }">
+    <body: class="new-page objective" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="objective.new.heading">
+            New Objective
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'objective.actions.create', :default=>['Create Objective']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Objective">
+  <page merge title="#{ht 'objective.show.title', :default=>['Objective'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page objective" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="objective.show.heading" name="#{name(:no_wrapper => true)}">
+                Objective <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a:owner param="creator-link"/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="objective.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Objective
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="what, is, assertion" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Objective">
+  <page merge title="#{ht 'objective.edit.title', :default=>['Edit Objective'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page objective" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="objective.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Objective
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'objective.actions.delete', :default=>['Remove This Objective']}" param/>
       </section>
 
       <section param="content-body">

@@ -38,6 +38,26 @@ RubyGRC::Application.routes.draw do
   get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
+
+  # Resource routes for controller "objectives"
+  get 'objectives(.:format)' => 'objectives#index', :as => 'objectives'
+  get 'objectives/new(.:format)', :as => 'new_objective'
+  get 'objectives/:id/edit(.:format)' => 'objectives#edit', :as => 'edit_objective'
+  get 'objectives/:id(.:format)' => 'objectives#show', :as => 'objective', :constraints => { :id => %r([^/.?]+) }
+  post 'objectives(.:format)' => 'objectives#create', :as => 'create_objective'
+  put 'objectives/:id(.:format)' => 'objectives#update', :as => 'update_objective', :constraints => { :id => %r([^/.?]+) }
+  delete 'objectives/:id(.:format)' => 'objectives#destroy', :as => 'destroy_objective', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "assertions"
+  get 'assertions(.:format)' => 'assertions#index', :as => 'assertions'
+  get 'assertions/new(.:format)', :as => 'new_assertion'
+  get 'assertions/:id/edit(.:format)' => 'assertions#edit', :as => 'edit_assertion'
+  get 'assertions/:id(.:format)' => 'assertions#show', :as => 'assertion', :constraints => { :id => %r([^/.?]+) }
+  post 'assertions(.:format)' => 'assertions#create', :as => 'create_assertion'
+  put 'assertions/:id(.:format)' => 'assertions#update', :as => 'update_assertion', :constraints => { :id => %r([^/.?]+) }
+  delete 'assertions/:id(.:format)' => 'assertions#destroy', :as => 'destroy_assertion', :constraints => { :id => %r([^/.?]+) }
+
   namespace :admin do
 
 

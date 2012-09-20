@@ -1,11 +1,35 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
+<def tag="form" for="Assertion">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, description" param/>
+    <div param="actions">
+      <submit label="#{ht 'assertion.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Control">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, who, as, what, how, exception, evidence, owner" param/>
+    <field-list fields="name, who, as, do_what, how, exception, evidence, owner" param/>
     <div param="actions">
       <submit label="#{ht 'control.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Objective">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="what, is, assertion, owner" param/>
+    <div param="actions">
+      <submit label="#{ht 'objective.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>

@@ -10,22 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919200749) do
+ActiveRecord::Schema.define(:version => 20120920202756) do
+
+  create_table "assertions", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "controls", :force => true do |t|
     t.string   "name"
     t.string   "who"
     t.string   "as"
-    t.string   "what"
     t.string   "how"
     t.string   "exception"
     t.string   "evidence"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "owner_id"
+    t.string   "do_what"
   end
 
   add_index "controls", ["owner_id"], :name => "index_controls_on_owner_id"
+
+  create_table "objectives", :force => true do |t|
+    t.string   "what"
+    t.string   "is"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "owner_id"
+    t.integer  "assertion_id"
+  end
+
+  add_index "objectives", ["assertion_id"], :name => "index_objectives_on_assertion_id"
+  add_index "objectives", ["owner_id"], :name => "index_objectives_on_owner_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40
