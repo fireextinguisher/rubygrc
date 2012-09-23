@@ -55,7 +55,7 @@ gem "hobo_jquery"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.
 gem "hobo_jquery_ui"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
 gem "hobo_bootstrap"#, :git => "git://github.com/suyccom/hobo_bootstrap.git"
 
-gem "will_paginate", :git => "git://github.com/bryanlarsen/will_paginate"
+gem "will_paginate"#, :git => "git://github.com/bryanlarsen/will_paginate"
 gem 'will_paginate-bootstrap'
 
 gem "rspec-rails", ">= 2.5.0", :group => [:test, :development]

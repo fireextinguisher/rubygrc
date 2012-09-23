@@ -1,4 +1,5 @@
-require 'tlsmail'
+#require 'tlsmail'
+
 Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
 ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.perform_deliveries = true

@@ -2,17 +2,21 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-require 'compass_twitter_bootstrap'
-
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
 #Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+Net.instance_eval {remove_const :SMTPSession} if defined?(SMTPSession)
+Net.instance_eval {remove_const :SMTPSession} if defined?(POP)
+Net.instance_eval {remove_const :SMTPSession} if defined?(POPSession)
+Net.instance_eval {remove_const :SMTPSession} if defined?(POP3Session)
+Net.instance_eval {remove_const :SMTPSession} if defined?(APOPSession)
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  #Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
+  Bundler.require(:default, :assets, Rails.env)
 end
 
 module RubyGRC
