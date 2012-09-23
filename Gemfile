@@ -23,7 +23,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   
-  gem 'compass_twitter_bootstrap', :git => 'git://github.com/wyuenho/compass-twitter-bootstrap'
+  gem 'compass_twitter_bootstrap'#, :git => 'git://github.com/wyuenho/compass-twitter-bootstrap'
   gem 'compass-rails'
 end
 
