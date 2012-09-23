@@ -88,7 +88,6 @@ GEM
     fancy_irb (0.7.2)
       paint (>= 0.8.1)
       unicode-display_width (>= 0.1.1)
-    ffi (1.1.5)
     ffi (1.1.5-x86-mingw32)
     fssm (0.2.9)
     g (1.7.1)
@@ -164,7 +163,6 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     multi_xml (0.5.1)
-    nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     ori (0.1.0)
     paint (0.8.5)
@@ -174,7 +172,6 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
-    pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -279,6 +276,7 @@ DEPENDENCIES
   rspec-rails (>= 2.5.0)
   sass-rails (~> 3.2.3)
   spork!
+  sprockets
   therubyracer
   tlsmail
   uglifier (>= 1.0.3)
