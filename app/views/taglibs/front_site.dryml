@@ -1,15 +1,27 @@
 <!-- Global taglib - these tags are shared across all subsites -->
 
-<include src="rapid" gem="hobo"/>
+<include gem="hobo_rapid"/>
+
+<include gem='hobo_jquery'/>
+
+<include gem='hobo_jquery_ui'/>
+
+<include gem='hobo_bootstrap'/>
 
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
-<set-theme name="clean"/>
-
 <extend tag="page">
-  <old-page merge>
+  <old-page merge nav-location="sub">
+    <append-app-name:>
+      <span style="float:left;font-size:0.5em;" id="mensajito"></span>
+      <a if="&Rails.env.test?" 
+         href="#" class="btn btn-success" style="float:left;"
+         onclick="$('#mensajito').html('Txatxi'); return false;">
+        OK
+      </a>
+    </append-app-name:>
     <footer:>
       <a href="&admin_users_url" if="&current_user.administrator?">
         <t key="hobo.admin.subsite_name">Admin</t>

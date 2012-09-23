@@ -1,5 +1,6 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
+
 <def tag="form" for="User">
   <form merge param="default">
     <error-messages param/>
