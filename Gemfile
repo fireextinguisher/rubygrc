@@ -24,7 +24,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   
-  gem 'compass_twitter_bootstrap'#, :git => 'git://github.com/wyuenho/compass-twitter-bootstrap'
+  gem 'compass_twitter_bootstrap', :git => 'git://github.com/wyuenho/compass-twitter-bootstrap'
   gem 'compass-rails'
 end
 
@@ -45,15 +45,15 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "hobo_support"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_fields"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "dryml"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_rapid"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_clean"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_clean_admin"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_jquery"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_jquery_ui"#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_support", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_fields", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "dryml", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo", '2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_rapid", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_clean", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_clean_admin", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_jquery", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
+gem "hobo_jquery_ui", '~> 2.0.0.pre1'#:git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
 gem "hobo_bootstrap", :git => "git://github.com/suyccom/hobo_bootstrap.git"
 
 gem "will_paginate", :git => "git://github.com/bryanlarsen/will_paginate"
