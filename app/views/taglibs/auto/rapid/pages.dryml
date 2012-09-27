@@ -214,6 +214,8 @@
 
             <record-flags fields="" param/>
 
+            <a:owner param="creator-link"/>
+
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="business_process.actions.edit" name="#{name(:no_wrapper => true)}">
                 Edit Business process
@@ -577,6 +579,8 @@
 
             <record-flags fields="" param/>
 
+            <a:owner param="creator-link"/>
+
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="process_step.actions.edit" name="#{name(:no_wrapper => true)}">
                 Edit Process step
@@ -586,7 +590,7 @@
 
           <section param="content-body">
             <view:description param="description" />
-            <field-list fields="business_process" param/>
+            <field-list fields="supplier, input, output, customer, business_process" param/>
           </section>
     </content:>
 

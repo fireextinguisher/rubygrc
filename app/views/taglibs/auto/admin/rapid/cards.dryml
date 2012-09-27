@@ -17,6 +17,9 @@
     <header: param>
       <h4 param="heading"><name/></h4>
     </header:>
+    <body: param>
+      <a:owner param="creator-link"/>
+    </body:>
   </card>
 </def>
 
@@ -49,6 +52,7 @@
     </header:>
     <body: param>
       <view:description param="description"/>
+      <a:owner param="creator-link"/>
     </body:>
   </card>
 </def>

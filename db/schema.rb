@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927213156) do
+ActiveRecord::Schema.define(:version => 20120927214600) do
 
   create_table "assertions", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(:version => 20120927213156) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner_id"
   end
+
+  add_index "business_processes", ["owner_id"], :name => "index_business_processes_on_owner_id"
 
   create_table "controls", :force => true do |t|
     t.string   "name"
@@ -63,9 +66,11 @@ ActiveRecord::Schema.define(:version => 20120927213156) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "business_process_id"
+    t.integer  "owner_id"
   end
 
   add_index "process_steps", ["business_process_id"], :name => "index_process_steps_on_business_process_id"
+  add_index "process_steps", ["owner_id"], :name => "index_process_steps_on_owner_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

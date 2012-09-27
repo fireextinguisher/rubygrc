@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   end
 
   has_many :controls, :class_name => "Control", :foreign_key => "owner_id"
+  has_many :business_processes, :class_name => "BusinessProcess", :foreign_key => "owner_id"
+  has_many :process_steps, :class_name => "ProcessStep", :foreign_key => "owner_id"
 
   # This gives admin rights and an :active state to the first sign-up.
   # Just remove it if you don't want that

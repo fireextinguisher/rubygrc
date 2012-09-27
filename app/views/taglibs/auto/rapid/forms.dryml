@@ -16,7 +16,7 @@
 <def tag="form" for="BusinessProcess">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="" param/>
+    <field-list fields="name, owner" param/>
     <div param="actions">
       <submit label="#{ht 'business_process.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -52,7 +52,7 @@
 <def tag="form" for="ProcessStep">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="business_process" param/>
+    <field-list fields="name, supplier, input, description, output, customer, business_process, owner" param/>
     <div param="actions">
       <submit label="#{ht 'process_step.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
