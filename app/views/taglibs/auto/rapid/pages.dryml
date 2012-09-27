@@ -7,8 +7,10 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Assertion"><ht key="assertion.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&BusinessProcess"><ht key="business_process.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Control"><ht key="control.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Objective"><ht key="objective.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&ProcessStep"><ht key="process_step.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -121,6 +123,125 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'assertion.actions.delete', :default=>['Remove This Assertion']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== BusinessProcess Pages ====== -->
+
+<def tag="index-page" for="BusinessProcess">
+  <page merge title="#{ht 'business_process.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page business-process" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="business_process.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="business_process.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="business_process.actions.new">New Business process</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="BusinessProcess">
+  <page merge title="#{ht 'business_process.new.title', :default=>[' New Business process'] }">
+    <body: class="new-page business-process" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="business_process.new.heading">
+            New Business process
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'business_process.actions.create', :default=>['Create Business process']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="BusinessProcess">
+  <page merge title="#{ht 'business_process.show.title', :default=>['Business process'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page business-process" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="business_process.show.heading" name="#{name(:no_wrapper => true)}">
+                Business process <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="business_process.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Business process
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="BusinessProcess">
+  <page merge title="#{ht 'business_process.edit.title', :default=>['Edit Business process'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page business-process" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="business_process.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Business process
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'business_process.actions.delete', :default=>['Remove This Business process']}" param/>
       </section>
 
       <section param="content-body">
@@ -365,6 +486,127 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'objective.actions.delete', :default=>['Remove This Objective']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== ProcessStep Pages ====== -->
+
+<def tag="index-page" for="ProcessStep">
+  <page merge title="#{ht 'process_step.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page process-step" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="process_step.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="process_step.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="process_step.actions.new">New Process step</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="ProcessStep">
+  <page merge title="#{ht 'process_step.new.title', :default=>[' New Process step'] }">
+    <body: class="new-page process-step" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="process_step.new.heading">
+            New Process step
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'process_step.actions.create', :default=>['Create Process step']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="ProcessStep">
+  <page merge title="#{ht 'process_step.show.title', :default=>['Process step'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page process-step" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="process_step.show.heading" name="#{name(:no_wrapper => true)}">
+                Process step <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="process_step.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Process step
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description" />
+            <field-list fields="business_process" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="ProcessStep">
+  <page merge title="#{ht 'process_step.edit.title', :default=>['Edit Process step'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page process-step" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="process_step.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Process step
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'process_step.actions.delete', :default=>['Remove This Process step']}" param/>
       </section>
 
       <section param="content-body">

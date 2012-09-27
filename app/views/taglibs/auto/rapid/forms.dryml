@@ -13,6 +13,18 @@
 
 
 
+<def tag="form" for="BusinessProcess">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="" param/>
+    <div param="actions">
+      <submit label="#{ht 'business_process.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="Control">
   <form merge param="default">
     <error-messages param/>
@@ -31,6 +43,18 @@
     <field-list fields="what, is, assertion, owner" param/>
     <div param="actions">
       <submit label="#{ht 'objective.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="ProcessStep">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="business_process" param/>
+    <div param="actions">
+      <submit label="#{ht 'process_step.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>

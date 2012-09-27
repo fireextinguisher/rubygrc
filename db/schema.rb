@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,11 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920202756) do
+ActiveRecord::Schema.define(:version => 20120927213156) do
 
   create_table "assertions", :force => true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "business_processes", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +52,20 @@ ActiveRecord::Schema.define(:version => 20120920202756) do
 
   add_index "objectives", ["assertion_id"], :name => "index_objectives_on_assertion_id"
   add_index "objectives", ["owner_id"], :name => "index_objectives_on_owner_id"
+
+  create_table "process_steps", :force => true do |t|
+    t.string   "name"
+    t.string   "supplier"
+    t.string   "input"
+    t.string   "description"
+    t.string   "output"
+    t.string   "customer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "business_process_id"
+  end
+
+  add_index "process_steps", ["business_process_id"], :name => "index_process_steps_on_business_process_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

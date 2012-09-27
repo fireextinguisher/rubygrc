@@ -9,12 +9,20 @@ RubyGRC::Application.routes.draw do
   resources :assertions
 
 
+  # Resource routes for controller business_processes
+  resources :business_processes
+
+
   # Resource routes for controller controls
   resources :controls
 
 
   # Resource routes for controller objectives
   resources :objectives
+
+
+  # Resource routes for controller process_steps
+  resources :process_steps
 
 
   # Resource routes for controller users
@@ -65,6 +73,16 @@ RubyGRC::Application.routes.draw do
   delete 'assertions/:id(.:format)' => 'assertions#destroy', :as => 'destroy_assertion', :constraints => { :id => %r([^/.?]+) }
 
 
+  # DEPRECATED Resource routes for controller business_processes
+  get 'business_processes(.:format)' => 'business_processes#index', :as => 'business_processes'
+  get 'business_processes/new(.:format)' => 'business_processes#new', :as => 'new_business_process'
+  get 'business_processes/:id/edit(.:format)' => 'business_processes#edit', :as => 'edit_business_process'
+  get 'business_processes/:id(.:format)' => 'business_processes#show', :as => 'business_process', :constraints => { :id => %r([^/.?]+) }
+  post 'business_processes(.:format)' => 'business_processes#create', :as => 'create_business_process'
+  put 'business_processes/:id(.:format)' => 'business_processes#update', :as => 'update_business_process', :constraints => { :id => %r([^/.?]+) }
+  delete 'business_processes/:id(.:format)' => 'business_processes#destroy', :as => 'destroy_business_process', :constraints => { :id => %r([^/.?]+) }
+
+
   # DEPRECATED Resource routes for controller controls
   get 'controls(.:format)' => 'controls#index', :as => 'controls'
   get 'controls/new(.:format)' => 'controls#new', :as => 'new_control'
@@ -83,6 +101,16 @@ RubyGRC::Application.routes.draw do
   post 'objectives(.:format)' => 'objectives#create', :as => 'create_objective'
   put 'objectives/:id(.:format)' => 'objectives#update', :as => 'update_objective', :constraints => { :id => %r([^/.?]+) }
   delete 'objectives/:id(.:format)' => 'objectives#destroy', :as => 'destroy_objective', :constraints => { :id => %r([^/.?]+) }
+
+
+  # DEPRECATED Resource routes for controller process_steps
+  get 'process_steps(.:format)' => 'process_steps#index', :as => 'process_steps'
+  get 'process_steps/new(.:format)' => 'process_steps#new', :as => 'new_process_step'
+  get 'process_steps/:id/edit(.:format)' => 'process_steps#edit', :as => 'edit_process_step'
+  get 'process_steps/:id(.:format)' => 'process_steps#show', :as => 'process_step', :constraints => { :id => %r([^/.?]+) }
+  post 'process_steps(.:format)' => 'process_steps#create', :as => 'create_process_step'
+  put 'process_steps/:id(.:format)' => 'process_steps#update', :as => 'update_process_step', :constraints => { :id => %r([^/.?]+) }
+  delete 'process_steps/:id(.:format)' => 'process_steps#destroy', :as => 'destroy_process_step', :constraints => { :id => %r([^/.?]+) }
 
 
   # DEPRECATED Lifecycle routes for controller users

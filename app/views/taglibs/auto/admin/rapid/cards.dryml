@@ -12,6 +12,14 @@
   </card>
 </def>
 
+<def tag="card" for="BusinessProcess">
+  <card class="business-process" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="Control">
   <card class="control" param="default" merge>
     <header: param>
@@ -30,6 +38,17 @@
     </header:>
     <body: param>
       <a:owner param="creator-link"/>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="ProcessStep">
+  <card class="process-step" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <view:description param="description"/>
     </body:>
   </card>
 </def>
