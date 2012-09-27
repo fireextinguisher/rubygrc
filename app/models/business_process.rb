@@ -6,10 +6,10 @@ class BusinessProcess < ActiveRecord::Base
     name :string
     timestamps
   end
-  attr_accessible :name
+  #attr_accessible :name
   
-  has_many :process_step, :dependent => :destroy
   belongs_to :owner, :class_name => "User", :creator => true
+  has_many :process_steps, :dependent => :destroy
 
   # --- Permissions --- #
 

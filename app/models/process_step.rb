@@ -11,7 +11,7 @@ class ProcessStep < ActiveRecord::Base
     customer    :string
     timestamps
   end
-  attr_accessible :name, :supplier, :input, :description, :output, :customer
+  #attr_accessible :name, :supplier, :input, :description, :output, :customer
   
   belongs_to :owner, :class_name => "User", :creator => true
   belongs_to :business_process
