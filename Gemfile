@@ -54,7 +54,7 @@ gem "hobo_clean", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:bra
 gem "hobo_clean_admin", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
 gem "hobo_jquery", '~> 2.0.0.pre1'#, :git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
 gem "hobo_jquery_ui", '~> 2.0.0.pre1'#:git => "git://github.com/iox/hobo.git",:branch => 'rails-3.2-suyccom'
-gem "hobo_bootstrap", :git => "git://github.com/hobo/hobo_bootstrap.git"#, :git => "git://github.com/suyccom/hobo_bootstrap.git"
+gem "hobo_bootstrap", :git => "git://github.com/Hobo/hobo_bootstrap.git"#, :git => "git://github.com/suyccom/hobo_bootstrap.git"
 
 gem "will_paginate", :git => "git://github.com/bryanlarsen/will_paginate"
 gem 'will_paginate-bootstrap'

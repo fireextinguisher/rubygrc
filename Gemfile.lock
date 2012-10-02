@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/Hobo/hobo_bootstrap.git
+  revision: a6a3a7fc603ed727caf5dc9773d8e2a1951bf462
+  specs:
+    hobo_bootstrap (2.0.0.pre3)
+      compass-rails (~> 1.0.3)
+      compass_twitter_bootstrap (~> 2.0.3)
+      hobo (~> 2.0.0.pre1)
+      hobo_jquery_ui (~> 2.0.0.pre1)
+      will_paginate-bootstrap (~> 0.2.1)
+
+GIT
   remote: git://github.com/bryanlarsen/will_paginate
   revision: 3096f88403096f7207c4c3ede0a8bb7c344bb78a
   specs:
@@ -9,17 +20,6 @@ GIT
   revision: a07c59d6652d81e8863b7ae5767e943fd272b5da
   specs:
     spork (1.0.0rc3)
-
-GIT
-  remote: git://github.com/suyccom/hobo_bootstrap.git
-  revision: 74e6c3b5bed01a901566d4a646abe8a17494041e
-  specs:
-    hobo_bootstrap (2.0.0.pre3)
-      compass-rails (~> 1.0.3)
-      compass_twitter_bootstrap (~> 2.0.3)
-      hobo (~> 2.0.0.pre1)
-      hobo_jquery_ui (~> 2.0.0.pre1)
-      will_paginate-bootstrap (~> 0.2.1)
 
 GIT
   remote: git://github.com/wyuenho/compass-twitter-bootstrap
@@ -105,6 +105,7 @@ GEM
     fancy_irb (0.7.2)
       paint (>= 0.8.1)
       unicode-display_width (>= 0.1.1)
+    ffi (1.1.5)
     ffi (1.1.5-x86-mingw32)
     fssm (0.2.9)
     g (1.7.1)
@@ -175,6 +176,7 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     multi_xml (0.5.1)
+    nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     ori (0.1.0)
     paint (0.8.5)
@@ -184,6 +186,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
     rack (1.4.1)
