@@ -224,6 +224,21 @@
           </header>
 
           <section param="content-body">
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="process_step.collection.heading" count="&this.process_steps.count" >
+                  <human-collection-name collection="process_steps" your/>
+                </ht>
+              </h3>
+
+              <collection:process_steps param/>
+
+              <a:process_steps action="new" if="&can_create?(@business_process.process_steps)" param="new-link">
+                <ht key="process_step.actions.new" count="1">
+                  New Process Step
+                </ht>
+              </a:process_steps>
+            </section>
           </section>
     </content:>
 
@@ -571,6 +586,7 @@
 
     <content: param>
           <header param="content-header">
+            <a:business_process param="parent-link">&laquo; <ht key="process_step.actions.back_to_parent" parent="Business process" name="&this">Back to <name/></ht></a:business_process>
             <h2 param="heading">
               <ht key="process_step.show.heading" name="#{name(:no_wrapper => true)}">
                 Process step <name/>
@@ -590,7 +606,7 @@
 
           <section param="content-body">
             <view:description param="description" />
-            <field-list fields="supplier, input, output, customer, business_process" param/>
+            <field-list fields="supplier, input, output, customer" param/>
           </section>
     </content:>
 
@@ -618,6 +634,38 @@
       </section>
     </content:>
 
+  </page>
+</def>
+
+
+
+<def tag="new-for-business-process-page" polymorphic/>
+<def tag="new-for-business-process-page" for="ProcessStep">
+  <page merge title="#{ht 'process_step.new_for_owner.title', :default=>['New Process step for']} #{name :with => @business_process}">
+    <body: class="new-for-owner-page  process-step" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="process_step.new_for_owner.heading">
+            New Process Step
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="process_step.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@business_process"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="business_process" method="post" param>
+          <field-list: skip="business_process"/>
+          <submit: label="#{ht 'process_step.actions.create', :default=>['Create Process step']}"/>
+        </form>
+      </section>
+    </content:>
   </page>
 </def>
 

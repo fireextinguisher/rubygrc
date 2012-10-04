@@ -16,6 +16,9 @@
     </header:>
     <body: param>
       <a:owner param="creator-link"/>
+      <ht key="process_step.collection.count" count="&this.process_steps.size">
+         <count:process_steps param/>
+      </ht>
     </body:>
   </card>
 </def>

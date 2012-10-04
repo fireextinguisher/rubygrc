@@ -24,6 +24,16 @@ RubyGRC::Application.routes.draw do
   # Resource routes for controller process_steps
   resources :process_steps
 
+  # Owner routes for controller process_steps
+  resources :business_processes, :as => :business_process, :only => [] do
+    resources :process_steps, :only => [] do
+      get 'new', :on => :new, :action => 'new_for_business_process'
+      collection do
+        post 'create', :action => 'create_for_business_process'
+      end
+    end
+  end
+
 
   # Resource routes for controller users
   resources :users, :only => [:edit, :show, :create, :update, :destroy] do
@@ -102,6 +112,10 @@ RubyGRC::Application.routes.draw do
   put 'objectives/:id(.:format)' => 'objectives#update', :as => 'update_objective', :constraints => { :id => %r([^/.?]+) }
   delete 'objectives/:id(.:format)' => 'objectives#destroy', :as => 'destroy_objective', :constraints => { :id => %r([^/.?]+) }
 
+
+  # DEPRECATED Owner routes for controller process_steps
+  get 'business_processes/:business_process_id/process_steps/new(.:format)' => 'process_steps#new_for_business_process', :as => 'new_process_step_for_business_process'
+  post 'business_processes/:business_process_id/process_steps(.:format)' => 'process_steps#create_for_business_process', :as => 'create_process_step_for_business_process'
 
   # DEPRECATED Resource routes for controller process_steps
   get 'process_steps(.:format)' => 'process_steps#index', :as => 'process_steps'

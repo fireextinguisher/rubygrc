@@ -30,7 +30,7 @@
 </def>
 
 <extend tag="page">
-  <old-page merge nav-location="sub">
+  <old-page merge>
     <append-head: param>
       <google-analytics tracking-code="UA-8260796-8"/> 
 	</append-head:>
