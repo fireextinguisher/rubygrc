@@ -19,6 +19,8 @@ if defined?(Bundler)
   #Bundler.require(:default, :assets, Rails.env)
 end
 
+require 'will_paginate/array' 
+
 module RubyGRC
   class Application < Rails::Application
   config.i18n.default_locale = :en

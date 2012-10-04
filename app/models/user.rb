@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
     timestamps
   end
 
+  has_many :objectives, :class_name => "Objective", :foreign_key => "owner_id"
   has_many :controls, :class_name => "Control", :foreign_key => "owner_id"
   has_many :business_processes, :class_name => "BusinessProcess", :foreign_key => "owner_id"
   has_many :process_steps, :class_name => "ProcessStep", :foreign_key => "owner_id"

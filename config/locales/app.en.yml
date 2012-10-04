@@ -1,0 +1,9 @@
+# Hobo application translation file for Russian.
+# Please, add the specific models and attributes for your application.
+
+en:
+
+  activerecord:
+    actions:
+      BusinessProcess:
+        new: New Business process
